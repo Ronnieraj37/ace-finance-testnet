@@ -36,9 +36,8 @@ function PoolQuickInfo({
 				title: 'APR',
 				value:
 					isPoolDetailsLoading ? 'Loading...'
-					: poolStats?.averageApr ?
-						poolStats.averageApr.toFixed(2) + '%'
-					:	'N/A',
+					: poolStats?.aprRange ? poolStats.aprRange
+					: 'N/A',
 			},
 			{
 				title: 'Risk Type',
