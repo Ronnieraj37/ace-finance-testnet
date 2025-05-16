@@ -5,12 +5,12 @@ import PoolCardBgWrapper from '../bg-wrapper/card-bg-wrapper';
 import styles from './pool-collection.module.scss';
 import { usePoolStore } from '@/store/usePoolStore';
 import {
-	ArrowCircleUpRightIcon,
-	CurrencyDollarIcon,
-	PulseIcon,
-	SealCheckIcon,
-	TrendUpIcon,
-	UsersThreeIcon,
+	ArrowCircleUpRight,
+	CurrencyDollar,
+	Pulse,
+	SealCheck,
+	TrendUp,
+	UsersThree,
 } from '@phosphor-icons/react';
 import '@prototype/number.prototype';
 import { useTransitionRouter } from 'next-view-transitions';
@@ -36,12 +36,12 @@ function PoolCardAction({
 					: poolStats?.tvl ?
 						Number(poolStats.tvl).formatWithSuffix() + '+'
 					:	'2.5K+',
-				I: CurrencyDollarIcon,
+				I: CurrencyDollar,
 			},
 			{
 				title: 'Active Investors',
 				value: isPoolDetailsLoading ? 'Loading...' : '1000+',
-				I: UsersThreeIcon,
+				I: UsersThree,
 			},
 			{
 				title: 'APR',
@@ -49,12 +49,12 @@ function PoolCardAction({
 					isPoolDetailsLoading ? 'Loading...'
 					: poolStats?.aprRange ? poolStats.aprRange
 					: 'N/A',
-				I: TrendUpIcon,
+				I: TrendUp,
 			},
 			{
 				title: 'Risk Type',
 				value: poolInfo.risk,
-				I: PulseIcon,
+				I: Pulse,
 			},
 		];
 	}, [poolStats, poolInfo, isPoolDetailsLoading]);
@@ -101,13 +101,13 @@ function PoolCardAction({
 					<li>24/7 Monitored</li>
 					<li>Smart Contract Audited</li>
 				</ul>
-				<SealCheckIcon
+				<SealCheck
 					size={48}
 					color='#F0E9FF'
 				/>
 			</div>
 			<div className={styles.arrowCon}>
-				<ArrowCircleUpRightIcon size={24} />
+				<ArrowCircleUpRight size={24} />
 			</div>
 		</div>
 	);
