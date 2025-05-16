@@ -14,6 +14,12 @@ function MainLayout({ children }: { children: React.ReactNode }) {
 			data-lenis-prevent>
 			<div className={styles['main-layout-header']}>
 				<div className={styles['main-layout-header-left']}>
+					<Image
+						src={ASSETS.LOGO}
+						alt='logo'
+						width={48}
+						height={48}
+					/>
 					<Link
 						href={APP_ROUTE.HOME}
 						className={styles['main-layout-header-logo']}>

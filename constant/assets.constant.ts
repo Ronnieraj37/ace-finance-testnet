@@ -1,4 +1,5 @@
 export const ASSETS = {
+	LOGO: '/logo/logo.svg',
 	'3D': {
 		BITCOIN: '/3d/bitcoin.webp',
 		ETH: '/3d/eth.webp',
