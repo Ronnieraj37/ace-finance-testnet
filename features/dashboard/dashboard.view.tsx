@@ -13,6 +13,7 @@ import { useUserPortfolio } from '@/store/useUserPortfolio';
 import { useTransitionRouter } from 'next-view-transitions';
 import DashboardWithdraw from './components/dashboard-withdraw';
 import { Skeleton } from '@/components/ui/skeleton';
+import Image from 'next/image';
 
 function DashboardView() {
 	const { isConnected } = useWeb3User();
@@ -86,7 +87,7 @@ function ConnectedDashboard() {
 		portfolioData.forEach((portfolioPool) => {
 			const poolValue = parseFloat(portfolioPool.totalValueUSD);
 			if (poolValue > 0) {
-				const apr = portfolioPool.pool.apr || 0;
+				const apr = portfolioPool.apr || 0;
 				weightedAprSum += poolValue * apr;
 				totalValue += poolValue;
 			}
@@ -142,7 +143,7 @@ function ConnectedDashboard() {
 					: 'Low',
 				tvl: portfolioPool?.pool.tvl || '2.5K',
 				activeInvestors: portfolioPool?.pool.activeInvestors || 0,
-				apr: portfolioPool?.pool.apr || 0,
+				apr: '~' + (portfolioPool.apr || 0).toFixed(2),
 				userInvestment: parseFloat(totalValueUSD),
 				earned,
 				tokenBalances: portfolioPool?.tokenBalances || [],
@@ -175,19 +176,7 @@ function ConnectedDashboard() {
 						}
 					</div>
 				</div>
-				<div className={styles.statsCard}>
-					<div className={styles.cardContent}>
-						<h3 className={styles.cardTitle}>Current APR</h3>
-						{isLoading ?
-							<Skeleton
-								className={styles.cardValue + ' h-8 w-20'}
-							/>
-						:	<p className={styles.cardValue}>
-								{dashboardData.currentApr.toFixed(2)}%
-							</p>
-						}
-					</div>
-				</div>
+
 				<div className={styles.statsCard}>
 					<div className={styles.cardContent}>
 						<h3 className={styles.cardTitle}>Active Pools</h3>
@@ -315,6 +304,106 @@ function ConnectedDashboard() {
 												$2.5K
 											</div>
 										</div>
+
+										{/* Token breakdown section */}
+										{pool.tokenBalances &&
+											pool.tokenBalances.length > 0 && (
+												<div
+													className={
+														styles.poolCard_tokens
+													}>
+													<div
+														className={
+															styles.poolCard_tokens_label
+														}>
+														Token Breakdown
+													</div>
+													<div
+														className={
+															styles.poolCard_tokens_list
+														}>
+														{pool.tokenBalances.map(
+															(
+																tokenBalance,
+																index
+															) => (
+																<div
+																	key={`${tokenBalance.token.address}-${index}`}
+																	className={
+																		styles.poolCard_token_item
+																	}>
+																	<div
+																		className={
+																			styles.poolCard_token_info
+																		}>
+																		<div
+																			className={
+																				styles.poolCard_token_icon
+																			}>
+																			<Image
+																				src={
+																					tokenBalance
+																						.token
+																						.logo
+																				}
+																				alt={
+																					tokenBalance
+																						.token
+																						.symbol
+																				}
+																				width={
+																					32
+																				}
+																				height={
+																					32
+																				}
+																			/>
+																		</div>
+																		<div
+																			className={
+																				styles.poolCard_token_details
+																			}>
+																			<div
+																				className={
+																					styles.poolCard_token_name
+																				}>
+																				{
+																					tokenBalance
+																						.token
+																						.symbol
+																				}
+																			</div>
+																			<div
+																				className={
+																					styles.poolCard_token_balance
+																				}>
+																				{
+																					tokenBalance.formattedBalance
+																				}
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		className={
+																			styles.poolCard_token_value
+																		}>
+																		$
+																		{parseFloat(
+																			tokenBalance.valueUSD
+																		).toLocaleString(
+																			undefined,
+																			{
+																				minimumFractionDigits: 2,
+																				maximumFractionDigits: 2,
+																			}
+																		)}
+																	</div>
+																</div>
+															)
+														)}
+													</div>
+												</div>
+											)}
 									</div>
 
 									<div className={styles.poolCard_actions}>

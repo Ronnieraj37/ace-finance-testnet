@@ -16,7 +16,6 @@ export interface PortfolioToken {
 export interface PoolInfo {
 	name: string;
 	address: string;
-	apr: number;
 	tvl: number;
 	activeInvestors: number;
 }
@@ -40,6 +39,7 @@ export interface PortfolioPool {
 	tokenBalances: TokenBalance[];
 	totalValueUSD: string;
 	hasInvestment: boolean;
+	apr: number;
 }
 
 /**

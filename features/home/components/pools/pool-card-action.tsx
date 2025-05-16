@@ -70,7 +70,7 @@ function PoolCardAction({
 			onClick={handlePoolClick}>
 			<PoolCardBgWrapper />
 			<div className={styles.aprCon}>
-				<p>APR</p>
+				<p>APR~</p>
 				<p className={styles.aprText}>
 					{isPoolDetailsLoading ?
 						'...'
