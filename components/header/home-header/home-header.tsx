@@ -9,7 +9,7 @@ function HomeHeader() {
 		<div className={styles['home-header-con']}>
 			<div className={cn(styles['home-header'])}>
 				<div className={styles['header-text']}>
-					<Text.Semibold24>AeroTropy</Text.Semibold24>
+					<Text.Semibold24>ACE</Text.Semibold24>
 				</div>
 				<div className={styles['connect-wallet']}>
 					<ConnectWalletButton />

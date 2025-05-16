@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
 export const RootMetadata: Metadata = {
-	title: 'AeroTropy',
+	title: 'ACE',
 	description: 'AI-powered cryptocurrency investment vaults',
 };

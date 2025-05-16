@@ -17,7 +17,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
 					<Link
 						href={APP_ROUTE.HOME}
 						className={styles['main-layout-header-logo']}>
-						AeroTropy
+						ACE
 					</Link>
 				</div>
 				<div className={styles['main-layout-header-right']}>

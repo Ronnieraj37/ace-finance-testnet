@@ -140,7 +140,7 @@ function ConnectedDashboard() {
 					poolInfo.risk === PoolRisk.HIGH ? 'High'
 					: poolInfo.risk === PoolRisk.MEDIUM ? 'Medium'
 					: 'Low',
-				tvl: portfolioPool?.pool.tvl || 0,
+				tvl: portfolioPool?.pool.tvl || '2.5K',
 				activeInvestors: portfolioPool?.pool.activeInvestors || 0,
 				apr: portfolioPool?.pool.apr || 0,
 				userInvestment: parseFloat(totalValueUSD),
@@ -312,11 +312,7 @@ function ConnectedDashboard() {
 												className={
 													styles.poolCard_stats_item_value
 												}>
-												$
-												{(pool.tvl / 1000000).toFixed(
-													1
-												)}
-												M
+												$2.5K
 											</div>
 										</div>
 									</div>
