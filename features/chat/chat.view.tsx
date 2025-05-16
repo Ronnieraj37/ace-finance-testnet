@@ -278,12 +278,18 @@ const ChatView: React.FC = () => {
 		}
 	}, [messages, processTransactionFromMessage]);
 
+	// Handle suggestion click from the chat messages component
+	const handleSuggestionClick = useCallback((suggestion: string) => {
+		append({ role: 'user', content: suggestion });
+	}, [append]);
+
 	return (
 		<div className={styles.chatContainer}>
 			<div className={styles.chatContent}>
 				<ChatMessages
 					messages={messages}
 					isLoading={isLoading}
+					onSuggestionClick={handleSuggestionClick}
 				/>
 			</div>
 

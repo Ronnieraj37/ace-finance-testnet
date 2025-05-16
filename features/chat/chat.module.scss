@@ -41,6 +41,49 @@
 	font-size: 1.1rem;
 }
 
+.suggestionContainer {
+	margin: 16px 0 24px;
+	padding: 16px;
+	border-radius: 16px;
+	backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+
+	.suggestionTitle {
+		font-size: 14px;
+		color: var(--secondary-text-color, #aaabac);
+		margin-bottom: 12px;
+	}
+
+	.suggestionButtons {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.suggestionButton {
+		padding: 12px 16px;
+		border-radius: 12px;
+
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		text-align: left;
+		color: #fff;
+		font-size: 14px;
+		backdrop-filter: blur(10px);
+		transition: all 0.2s ease;
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+	}
+}
+
 .chatMessage {
 	display: flex;
 	align-items: flex-start;
