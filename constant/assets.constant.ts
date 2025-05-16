@@ -6,7 +6,7 @@ export const ASSETS = {
 		UNISWAP: '/3d/uniswap.webp',
 	},
 	POOL: {
-		HIGH_GROWTH: '/pool/highrisk.png',
+		HIGH_GROWTH: '/pool/highrisk.webp',
 		BALANCED_GROWTH: '/pool/balanced.webp',
 		STABLE_GROWTH: '/pool/stable.webp',
 	},
