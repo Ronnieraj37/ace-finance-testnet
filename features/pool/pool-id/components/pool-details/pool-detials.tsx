@@ -6,6 +6,7 @@ import { usePoolStore } from '@/store/usePoolStore';
 import PoolQuickInfo from './pool-quick-info';
 import PoolSecurity from './pool-security';
 import PoolCharts from './pool-charts';
+import PoolAllocation from './pool-allocation';
 function PoolDetails() {
 	const poolId = usePoolFormStore((state) => state.poolId);
 	const { poolDetails } = usePoolStore();
@@ -27,9 +28,12 @@ function PoolDetails() {
 				</div>
 				<PoolQuickInfo
 					poolInfo={poolInfo}
-					poolStats={poolDetails?.[poolId]}
+					poolStats={currentPool}
 				/>
-				<PoolCharts poolStats={poolDetails?.[poolId]} />
+				{currentPool?.tokenAllocation && (
+					<PoolAllocation allocation={currentPool.tokenAllocation} />
+				)}
+				<PoolCharts poolStats={currentPool} />
 			</div>
 			<PoolSecurity />
 		</div>

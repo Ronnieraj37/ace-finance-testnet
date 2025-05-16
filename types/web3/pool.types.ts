@@ -33,6 +33,16 @@ export enum PoolRiskLevel {
 	HIGH = 'high',
 }
 
+export type PoolAllocation = {
+	symbol: string;
+	name: string;
+	address: Web3Address;
+	totalSupply: string;
+	formattedSupply: string;
+	valueUSD: string;
+	logoUrl: string;
+};
+
 /**
  * Strategy information
  */
@@ -44,6 +54,8 @@ export type PoolStrategy = {
 	poolCount: number;
 	tvl: string;
 	topPools: PoolData[];
+	tokenAllocation: PoolAllocation[];
+	aprRange: string;
 };
 
 /**
