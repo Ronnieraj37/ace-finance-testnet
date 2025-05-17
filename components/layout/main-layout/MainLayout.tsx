@@ -6,6 +6,7 @@ import ConnectWalletButton from '@/components/features/web3/connect-wallet-butto
 import { Link } from 'next-view-transitions';
 import { APP_ROUTE } from '@/constant/routes.constant';
 import MainLayoutUserDashboardCta from './MainLayoutUserDashboardCta';
+import TestnetMintCta from './TestnetMintCta';
 
 function MainLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -28,6 +29,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
 				</div>
 				<div className={styles['main-layout-header-right']}>
 					<MainLayoutUserDashboardCta />
+					<TestnetMintCta />
 					<ConnectWalletButton />
 				</div>
 			</div>
