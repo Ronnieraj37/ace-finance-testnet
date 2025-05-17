@@ -29,7 +29,7 @@ function Web3Provider({
 					chain={web3DataProvider.baseChain}
 					config={{
 						appearance: {
-							name: 'ACE Finance',
+							name: 'A$CE Finance',
 							mode: 'light',
 						},
 						wallet: {

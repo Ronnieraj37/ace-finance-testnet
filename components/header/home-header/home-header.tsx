@@ -17,7 +17,7 @@ function HomeHeader() {
 						width={48}
 						height={48}
 					/>
-					<Text.Semibold24>ACE</Text.Semibold24>
+					<Text.Semibold24>A$CE</Text.Semibold24>
 				</div>
 				<div className={styles['connect-wallet']}>
 					<ConnectWalletButton />

@@ -31,12 +31,12 @@ function DesktopOnly({ children }: { children: React.ReactNode }) {
 					<div className={styles.logoContainer}>
 						<Image
 							src={ASSETS.LOGO}
-							alt='ACE Finance'
+							alt='A$CE Finance'
 							width={80}
 							height={80}
 							className={styles.logo}
 						/>
-						<h1 className={styles.title}>ACE Finance</h1>
+						<h1 className={styles.title}>A$CE Finance</h1>
 					</div>
 
 					<div className={styles.deviceIcons}>
@@ -61,14 +61,14 @@ function DesktopOnly({ children }: { children: React.ReactNode }) {
 					<div className={styles.message}>
 						<h2>Please use a larger screen</h2>
 						<p>
-							ACE Finance is optimized for desktop experience.
+							A$CE Finance is optimized for desktop experience.
 							Please access our platform on a device with a screen
 							width of at least 900px for the best experience.
 						</p>
 					</div>
 
 					<div className={styles.footer}>
-						© {new Date().getFullYear()} ACE Finance. All rights
+						© {new Date().getFullYear()} A$CE Finance. All rights
 						reserved.
 					</div>
 				</div>
